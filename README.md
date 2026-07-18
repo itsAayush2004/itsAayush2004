@@ -117,16 +117,6 @@ charting 30+ places I've explored and the ones I still dream of.
 
 ---
 
-### 📊 GitHub Stats
-
-<p align="center">
-  <img height="160" src="https://github-readme-stats.vercel.app/api?username=akversebusiness-beep&show_icons=true&hide_rank=true&hide_border=true&include_all_commits=true&count_private=true&theme=tokyonight&title_color=7C3AED&icon_color=7C3AED" alt="GitHub stats" />
-  &nbsp;
-  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=akversebusiness-beep&layout=compact&hide_border=true&langs_count=6&theme=tokyonight&title_color=7C3AED" alt="Top languages" />
-</p>
-
----
-
 <p align="center">
   <i>“Handcrafted worlds, real-time and on the web.”</i>
 </p>
