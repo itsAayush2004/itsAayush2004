@@ -1,16 +1,12 @@
 <!--
 GitHub Profile README - itsAayush2004 (Aayush Kumar)
 This file goes in a repo named exactly: itsAayush2004/itsAayush2004
-and it will render at the top of your GitHub profile page.
+Design inspired by github.com/sunnypatell - dark + violet theme.
 -->
 
-<h1 align="center">Hi, I'm Aayush 👋</h1>
-
-<p align="center">
-<a href="https://readme-typing-svg.demolab.com">
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=22&duration=3000&pause=800&center=true&vCenter=true&width=700&lines=Creative+developer+building+the+ARTHIS+universe;Multiplayer+mini-games+%C2%B7+real-time+worlds;Interactive+3D+on+the+web+with+Three.js;Unity+%2B+Python+relays+%2B+WebGL" alt="Typing SVG" />
-</a>
-</p>
+<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=0:0D1117,100:2D1B4E&text=Aayush%20Kumar&fontSize=46&fontColor=EDE9FE&fontAlignY=35&desc=Creative%20Developer%20%C2%B7%20Game%20Builder%20%C2%B7%20ARTHIS%20Universe&descAlignY=58&descSize=18&animation=fadeIn" alt="Aayush Kumar" width="100%" />
+</div>
 
 <p align="center">
 <a href="https://arthis.space"><img src="https://img.shields.io/badge/ARTHIS.space-Mini%20Games-FF4D6D?style=for-the-badge&logo=gamejolt&logoColor=white" alt="ARTHIS.space" /></a>
@@ -20,8 +16,31 @@ and it will render at the top of your GitHub profile page.
 </p>
 
 <p align="center">
-<img src="https://komarev.com/ghpvc/?username=itsAayush2004&label=Profile%20views&color=7C3AED&style=flat" alt="Profile views" />
+<a href="https://github.com/itsAayush2004?tab=followers"><img alt="Followers" src="https://img.shields.io/github/followers/itsAayush2004?style=flat-square&color=7C3AED&labelColor=0D1117&label=Followers"></a>
+<a href="https://github.com/itsAayush2004"><img alt="Stars" src="https://img.shields.io/github/stars/itsAayush2004?affiliations=OWNER%2CCOLLABORATOR&style=flat-square&color=7C3AED&labelColor=0D1117&label=Stars"></a>
+<img alt="Profile views" src="https://komarev.com/ghpvc/?username=itsAayush2004&style=flat-square&color=7C3AED&labelColor=0D1117&label=Profile%20Views">
 </p>
+
+<div align="center">
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=3000&pause=800&color=A78BFA&center=true&vCenter=true&width=700&lines=Creative+developer+building+the+ARTHIS+universe;Multiplayer+mini-games+%C2%B7+real-time+worlds;Interactive+3D+on+the+web+with+Three.js;Unity+%2B+Python+relays+%2B+WebGL" alt="Typing SVG" />
+</div>
+
+<br />
+
+<div align="center">
+<img src="https://skillicons.dev/icons?i=py,cs,js,html,css,unity,threejs,docker,git,github&theme=dark" alt="Skills" />
+</div>
+
+<br />
+
+<div align="center">
+<img width="49%" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=itsAayush2004&show_icons=true&hide_border=false&border_color=7C3AED&hide_title=true&count_private=true&include_all_commits=true&card_width=437&bg_color=0D1117&text_color=C9D1D9&icon_color=A78BFA&ring_color=7C3AED" />
+<img width="49%" alt="Most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=itsAayush2004&layout=compact&langs_count=8&hide_border=false&border_color=7C3AED&hide_title=true&card_width=437&bg_color=0D1117&text_color=C9D1D9&title_color=A78BFA" />
+</div>
+
+<div align="center">
+<img width="99%" alt="Contribution graph" src="https://github-readme-activity-graph.vercel.app/graph?username=itsAayush2004&hide_border=false&border_color=7C3AED&hide_title=true&area=true&bg_color=0D1117&color=A78BFA&line=7C3AED&point=EDE9FE&area_color=7C3AED&radius=10" />
+</div>
 
 ---
 
@@ -35,32 +54,6 @@ Aayush Kumar — creative developer & game builder based in Jaipur, India. I bui
 - 🌍 Also building **Travel Atlas**, a Three.js 3D globe — live on GitHub Pages
 - 🧩 I like the seam where **game design meets real-time systems and 3D on the web**
 - 📫 Reach me at **akversebusiness@gmail.com**
-
----
-
-### 🛠️ Tech Stack
-
-**Languages**
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-
-**Engines & Frameworks**
-
-![Unity](https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white)
-![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
-![WebGL](https://img.shields.io/badge/WebGL-990000?style=for-the-badge&logo=webgl&logoColor=white)
-![WebSockets](https://img.shields.io/badge/WebSockets-010101?style=for-the-badge&logo=socketdotio&logoColor=white)
-
-**Infra & Tooling**
-
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Railway](https://img.shields.io/badge/Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)
-![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
 ---
 
@@ -106,19 +99,10 @@ Aayush Kumar — creative developer & game builder based in Jaipur, India. I bui
 
 ---
 
-### 📊 GitHub Stats
-
-<p align="center">
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=itsAayush2004&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" alt="GitHub stats" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=itsAayush2004&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top languages" />
-</p>
-
-<p align="center">
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=itsAayush2004&theme=tokyonight&hide_border=true" alt="GitHub streak" />
-</p>
-
----
-
 <p align="center">
 <i>"Handcrafted worlds, real-time and on the web."</i>
 </p>
+
+<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&height=150&color=0:2D1B4E,100:0D1117&section=footer" alt="" width="100%" />
+</div>
