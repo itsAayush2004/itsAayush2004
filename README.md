@@ -120,12 +120,9 @@ charting 30+ places I've explored and the ones I still dream of.
 ### 📊 GitHub Stats
 
 <p align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=akversebusiness-beep&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true" alt="GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=akversebusiness-beep&layout=compact&theme=tokyonight&hide_border=true&langs_count=8" alt="Top languages" />
-</p>
-
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=akversebusiness-beep&theme=tokyonight&hide_border=true" alt="GitHub streak" />
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=akversebusiness-beep&show_icons=true&hide_rank=true&hide_border=true&include_all_commits=true&count_private=true&theme=tokyonight&title_color=7C3AED&icon_color=7C3AED" alt="GitHub stats" />
+  &nbsp;
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=akversebusiness-beep&layout=compact&hide_border=true&langs_count=6&theme=tokyonight&title_color=7C3AED" alt="Top languages" />
 </p>
 
 ---
