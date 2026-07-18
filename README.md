@@ -5,7 +5,7 @@ Design inspired by github.com/sunnypatell - dark + violet theme.
 -->
 
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=0:0D1117,100:2D1B4E&text=Aayush%20Kumar&fontSize=46&fontColor=EDE9FE&fontAlignY=35&desc=Creative%20Developer%20%C2%B7%20Game%20Builder%20%C2%B7%20ARTHIS%20Universe&descAlignY=58&descSize=18&animation=fadeIn" alt="Aayush Kumar" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=0:0D1117,100:2D1B4E&text=Aayush%20Kumar&fontSize=46&fontColor=EDE9FE&fontAlignY=35&desc=Creative%20Developer%20%C2%B7%20Game%20Builder%20%C2%B7%20ARTHIS%20Universe&descAlignY=58&descSize=18" alt="Aayush Kumar" width="100%" />
 </div>
 
 <p align="center">
