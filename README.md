@@ -2,11 +2,16 @@
 GitHub Profile README - itsAayush2004 (Aayush Kumar)
 This file goes in a repo named exactly: itsAayush2004/itsAayush2004
 Design inspired by github.com/sunnypatell - dark + violet theme.
+Note: capsule-render text overlays get stripped by GitHub's camo proxy,
+so the name/tagline use real HTML text instead of baked-in SVG text.
 -->
 
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&height=200&color=0:0D1117,100:2D1B4E&text=Aayush%20Kumar&fontSize=46&fontColor=EDE9FE&fontAlignY=35&desc=Creative%20Developer%20%C2%B7%20Game%20Builder%20%C2%B7%20ARTHIS%20Universe&descAlignY=58&descSize=18" alt="Aayush Kumar" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:0D1117,100:2D1B4E" alt="" width="100%" />
 </div>
+
+<h1 align="center">Hi, I'm Aayush 👋</h1>
+<p align="center"><i>Creative Developer · Game Builder · ARTHIS Universe</i></p>
 
 <p align="center">
 <a href="https://arthis.space"><img src="https://img.shields.io/badge/ARTHIS.space-Mini%20Games-FF4D6D?style=for-the-badge&logo=gamejolt&logoColor=white" alt="ARTHIS.space" /></a>
@@ -104,5 +109,5 @@ Aayush Kumar — creative developer & game builder based in Jaipur, India. I bui
 </p>
 
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&height=150&color=0:2D1B4E,100:0D1117&section=footer" alt="" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:2D1B4E,100:0D1117&section=footer" alt="" width="100%" />
 </div>
