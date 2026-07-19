@@ -17,7 +17,6 @@ This file goes in a repo named exactly: itsAayush2004/itsAayush2004
 </p>
 
 <p align="center">
-<a href="https://github.com/itsAayush2004?tab=followers"><img alt="Followers" src="https://img.shields.io/github/followers/itsAayush2004?style=flat-square&color=8C242F&labelColor=6B1B24&label=Followers"></a>
 <a href="https://github.com/itsAayush2004"><img alt="Stars" src="https://img.shields.io/github/stars/itsAayush2004?affiliations=OWNER%2CCOLLABORATOR&style=flat-square&color=8C242F&labelColor=6B1B24&label=Stars"></a>
 <img alt="Profile views" src="https://komarev.com/ghpvc/?username=itsAayush2004&style=flat-square&color=8C242F&labelColor=6B1B24&label=Profile%20Views">
 </p>
