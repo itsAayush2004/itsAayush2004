@@ -4,7 +4,7 @@ This file goes in a repo named exactly: itsAayush2004/itsAayush2004
 -->
 
 <div align="center">
-<img src="BANNER_AAYUSH.png" alt="Aayush — Developer · AI Systems · 3D Tooling · Games" width="100%" />
+<img src="BANNER_AAYUSH.webp" alt="Aayush — Developer · AI Systems · 3D Tooling · Games" width="100%" />
 </div>
 
 <br />
