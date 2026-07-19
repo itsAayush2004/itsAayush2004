@@ -35,11 +35,6 @@ This file goes in a repo named exactly: itsAayush2004/itsAayush2004
 <br />
 
 <div align="center">
-<img width="49%" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=itsAayush2004&show_icons=true&hide_border=false&border_color=8C242F&hide_title=true&count_private=true&include_all_commits=true&card_width=437&bg_color=FFFFFF&text_color=1A1A1A&icon_color=8C242F&ring_color=8C242F" />
-<img width="49%" alt="Most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=itsAayush2004&layout=compact&langs_count=8&hide_border=false&border_color=8C242F&hide_title=true&card_width=437&bg_color=FFFFFF&text_color=1A1A1A&title_color=8C242F" />
-</div>
-
-<div align="center">
 <img width="99%" alt="Contribution graph" src="https://github-readme-activity-graph.vercel.app/graph?username=itsAayush2004&hide_border=false&border_color=8C242F&hide_title=true&area=true&bg_color=FFFFFF&color=1A1A1A&line=8C242F&point=6B1B24&area_color=8C242F&radius=10" />
 </div>
 
