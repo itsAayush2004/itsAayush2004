@@ -1,17 +1,13 @@
 <!--
 GitHub Profile README - itsAayush2004 (Aayush Kumar)
 This file goes in a repo named exactly: itsAayush2004/itsAayush2004
-Design inspired by github.com/sunnypatell - dark + violet theme.
-Note: capsule-render text overlays get stripped by GitHub's camo proxy,
-so the name/tagline use real HTML text instead of baked-in SVG text.
 -->
 
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&height=180&color=0:0D1117,100:2D1B4E" alt="" width="100%" />
+<img src="BANNER_AAYUSH.png" alt="Aayush — Developer · AI Systems · 3D Tooling · Games" width="100%" />
 </div>
 
-<h1 align="center">Hi, I'm Aayush 👋</h1>
-<p align="center"><i>Creative Developer · Game Builder · ARTHIS Universe</i></p>
+<br />
 
 <p align="center">
 <a href="https://arthis.space"><img src="https://img.shields.io/badge/ARTHIS.space-Mini%20Games-FF4D6D?style=for-the-badge&logo=gamejolt&logoColor=white" alt="ARTHIS.space" /></a>
