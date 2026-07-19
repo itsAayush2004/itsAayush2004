@@ -11,36 +11,36 @@ This file goes in a repo named exactly: itsAayush2004/itsAayush2004
 
 <p align="center">
 <a href="https://arthis.space"><img src="https://img.shields.io/badge/ARTHIS.space-Mini%20Games-FF4D6D?style=for-the-badge&logo=gamejolt&logoColor=white" alt="ARTHIS.space" /></a>
-<a href="https://arthis.land"><img src="https://img.shields.io/badge/ARTHIS.land-The%20Wall-7C3AED?style=for-the-badge&logo=unity&logoColor=white" alt="ARTHIS.land" /></a>
+<a href="https://arthis.land"><img src="https://img.shields.io/badge/ARTHIS.land-The%20Wall-8C242F?style=for-the-badge&logo=unity&logoColor=white" alt="ARTHIS.land" /></a>
 <a href="https://itsAayush2004.github.io"><img src="https://img.shields.io/badge/Travel%20Atlas-Live%20Demo-0EA5E9?style=for-the-badge&logo=three.js&logoColor=white" alt="Travel Atlas" /></a>
 <a href="mailto:akversebusiness@gmail.com"><img src="https://img.shields.io/badge/Email-Reach%20out-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 </p>
 
 <p align="center">
-<a href="https://github.com/itsAayush2004?tab=followers"><img alt="Followers" src="https://img.shields.io/github/followers/itsAayush2004?style=flat-square&color=7C3AED&labelColor=0D1117&label=Followers"></a>
-<a href="https://github.com/itsAayush2004"><img alt="Stars" src="https://img.shields.io/github/stars/itsAayush2004?affiliations=OWNER%2CCOLLABORATOR&style=flat-square&color=7C3AED&labelColor=0D1117&label=Stars"></a>
-<img alt="Profile views" src="https://komarev.com/ghpvc/?username=itsAayush2004&style=flat-square&color=7C3AED&labelColor=0D1117&label=Profile%20Views">
+<a href="https://github.com/itsAayush2004?tab=followers"><img alt="Followers" src="https://img.shields.io/github/followers/itsAayush2004?style=flat-square&color=8C242F&labelColor=6B1B24&label=Followers"></a>
+<a href="https://github.com/itsAayush2004"><img alt="Stars" src="https://img.shields.io/github/stars/itsAayush2004?affiliations=OWNER%2CCOLLABORATOR&style=flat-square&color=8C242F&labelColor=6B1B24&label=Stars"></a>
+<img alt="Profile views" src="https://komarev.com/ghpvc/?username=itsAayush2004&style=flat-square&color=8C242F&labelColor=6B1B24&label=Profile%20Views">
 </p>
 
 <div align="center">
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=3000&pause=800&color=A78BFA&center=true&vCenter=true&width=700&lines=Creative+developer+building+the+ARTHIS+universe;Multiplayer+mini-games+%C2%B7+real-time+worlds;Interactive+3D+on+the+web+with+Three.js;Unity+%2B+Python+relays+%2B+WebGL" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=20&duration=3000&pause=800&color=8C242F&center=true&vCenter=true&width=700&lines=Creative+developer+building+the+ARTHIS+universe;Multiplayer+mini-games+%C2%B7+real-time+worlds;Interactive+3D+on+the+web+with+Three.js;Unity+%2B+Python+relays+%2B+WebGL" alt="Typing SVG" />
 </div>
 
 <br />
 
 <div align="center">
-<img src="https://skillicons.dev/icons?i=py,cs,js,html,css,unity,threejs,docker,git,github&theme=dark" alt="Skills" />
+<img src="https://skillicons.dev/icons?i=py,cs,js,html,css,unity,threejs,docker,git,github&theme=light" alt="Skills" />
 </div>
 
 <br />
 
 <div align="center">
-<img width="49%" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=itsAayush2004&show_icons=true&hide_border=false&border_color=7C3AED&hide_title=true&count_private=true&include_all_commits=true&card_width=437&bg_color=0D1117&text_color=C9D1D9&icon_color=A78BFA&ring_color=7C3AED" />
-<img width="49%" alt="Most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=itsAayush2004&layout=compact&langs_count=8&hide_border=false&border_color=7C3AED&hide_title=true&card_width=437&bg_color=0D1117&text_color=C9D1D9&title_color=A78BFA" />
+<img width="49%" alt="GitHub stats" src="https://github-readme-stats.vercel.app/api?username=itsAayush2004&show_icons=true&hide_border=false&border_color=8C242F&hide_title=true&count_private=true&include_all_commits=true&card_width=437&bg_color=FFFFFF&text_color=1A1A1A&icon_color=8C242F&ring_color=8C242F" />
+<img width="49%" alt="Most used languages" src="https://github-readme-stats.vercel.app/api/top-langs/?username=itsAayush2004&layout=compact&langs_count=8&hide_border=false&border_color=8C242F&hide_title=true&card_width=437&bg_color=FFFFFF&text_color=1A1A1A&title_color=8C242F" />
 </div>
 
 <div align="center">
-<img width="99%" alt="Contribution graph" src="https://github-readme-activity-graph.vercel.app/graph?username=itsAayush2004&hide_border=false&border_color=7C3AED&hide_title=true&area=true&bg_color=0D1117&color=A78BFA&line=7C3AED&point=EDE9FE&area_color=7C3AED&radius=10" />
+<img width="99%" alt="Contribution graph" src="https://github-readme-activity-graph.vercel.app/graph?username=itsAayush2004&hide_border=false&border_color=8C242F&hide_title=true&area=true&bg_color=FFFFFF&color=1A1A1A&line=8C242F&point=6B1B24&area_color=8C242F&radius=10" />
 </div>
 
 ---
@@ -105,5 +105,5 @@ Aayush Kumar — creative developer & game builder based in Jaipur, India. I bui
 </p>
 
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:2D1B4E,100:0D1117&section=footer" alt="" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&height=120&color=0:FFFFFF,100:8C242F&section=footer" alt="" width="100%" />
 </div>
