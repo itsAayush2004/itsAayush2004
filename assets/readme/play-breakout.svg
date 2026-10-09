@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="52" viewBox="0 0 300 52" role="img" aria-label="Play Commit Breakout">
+<title>Play Commit Breakout</title>
+<style>
+.s{font-family:'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif}
+.m{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace}
+</style>
+
+<rect width="300" height="52" rx="12" fill="#39D353"/>
+<path d="M28 17l18 9-18 9z" fill="#04220E"/>
+<text x="60" y="32" class="s" font-size="15" fill="#04220E" font-weight="800" text-anchor="start" letter-spacing="0.6">PLAY COMMIT BREAKOUT</text>
+
+</svg>

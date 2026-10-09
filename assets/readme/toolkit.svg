@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="328" viewBox="0 0 880 328" role="img" aria-label="Toolkit">
+<title>Toolkit</title>
+<style>
+.s{font-family:'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif}
+.m{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace}
+</style>
+<rect width="880" height="328" rx="16" fill="#16161A"/>
+<text x="28" y="39" class="m" font-size="11" fill="#86837D" font-weight="500" text-anchor="start" letter-spacing="1.5">ENGINES</text>
+<rect x="190" y="20" width="61" height="28" rx="14" fill="#222228"/>
+<text x="220.5" y="39" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >Unity</text>
+<rect x="259" y="20" width="122" height="28" rx="14" fill="#222228"/>
+<text x="320.0" y="39" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >Unreal Engine</text>
+<rect x="24" y="60" width="832" height="1" fill="#2A2A30"/>
+<text x="28" y="91" class="m" font-size="11" fill="#86837D" font-weight="500" text-anchor="start" letter-spacing="1.5">LANGUAGES</text>
+<rect x="190" y="72" width="39" height="28" rx="14" fill="#222228"/>
+<text x="209.5" y="91" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >C#</text>
+<rect x="237" y="72" width="69" height="28" rx="14" fill="#222228"/>
+<text x="271.5" y="91" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >Python</text>
+<rect x="314" y="72" width="99" height="28" rx="14" fill="#222228"/>
+<text x="363.5" y="91" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >JavaScript</text>
+<rect x="421" y="72" width="46" height="28" rx="14" fill="#222228"/>
+<text x="444.0" y="91" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >C++</text>
+<rect x="475" y="72" width="54" height="28" rx="14" fill="#222228"/>
+<text x="502.0" y="91" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >Java</text>
+<rect x="537" y="72" width="84" height="28" rx="14" fill="#222228"/>
+<text x="579.0" y="91" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >HTML/CSS</text>
+<rect x="24" y="112" width="832" height="1" fill="#2A2A30"/>
+<text x="28" y="143" class="m" font-size="11" fill="#86837D" font-weight="500" text-anchor="start" letter-spacing="1.5">WEB 3D</text>
+<rect x="190" y="124" width="84" height="28" rx="14" fill="#222228"/>
+<text x="232.0" y="143" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >Three.js</text>
+<rect x="282" y="124" width="61" height="28" rx="14" fill="#222228"/>
+<text x="312.5" y="143" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >WebGL</text>
+<rect x="351" y="124" width="106" height="28" rx="14" fill="#222228"/>
+<text x="404.0" y="143" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >Unity WebGL</text>
+<rect x="465" y="124" width="69" height="28" rx="14" fill="#222228"/>
+<text x="499.5" y="143" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >WebRTC</text>
+<rect x="24" y="164" width="832" height="1" fill="#2A2A30"/>
+<text x="28" y="195" class="m" font-size="11" fill="#86837D" font-weight="500" text-anchor="start" letter-spacing="1.5">AI &amp; BACKEND</text>
+<rect x="190" y="176" width="76" height="28" rx="14" fill="#222228"/>
+<text x="228.0" y="195" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >FastAPI</text>
+<rect x="274" y="176" width="122" height="28" rx="14" fill="#222228"/>
+<text x="335.0" y="195" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >RAG pipelines</text>
+<rect x="404" y="176" width="99" height="28" rx="14" fill="#222228"/>
+<text x="453.5" y="195" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >Vector DBs</text>
+<rect x="511" y="176" width="122" height="28" rx="14" fill="#222228"/>
+<text x="572.0" y="195" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >LLM workflows</text>
+<rect x="641" y="176" width="76" height="28" rx="14" fill="#222228"/>
+<text x="679.0" y="195" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >ComfyUI</text>
+<rect x="725" y="176" width="46" height="28" rx="14" fill="#222228"/>
+<text x="748.0" y="195" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >n8n</text>
+<rect x="24" y="216" width="832" height="1" fill="#2A2A30"/>
+<text x="28" y="247" class="m" font-size="11" fill="#86837D" font-weight="500" text-anchor="start" letter-spacing="1.5">DATA</text>
+<rect x="190" y="228" width="84" height="28" rx="14" fill="#222228"/>
+<text x="232.0" y="247" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >Supabase</text>
+<rect x="282" y="228" width="99" height="28" rx="14" fill="#222228"/>
+<text x="331.5" y="247" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >PostgreSQL</text>
+<rect x="389" y="228" width="69" height="28" rx="14" fill="#222228"/>
+<text x="423.5" y="247" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >Docker</text>
+<rect x="24" y="268" width="832" height="1" fill="#2A2A30"/>
+<text x="28" y="299" class="m" font-size="11" fill="#86837D" font-weight="500" text-anchor="start" letter-spacing="1.5">3D &amp; TOOLING</text>
+<rect x="190" y="280" width="174" height="28" rx="14" fill="#222228"/>
+<text x="277.0" y="299" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >Blender + Python API</text>
+<rect x="372" y="280" width="174" height="28" rx="14" fill="#222228"/>
+<text x="459.0" y="299" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >Unity editor tooling</text>
+<rect x="554" y="280" width="152" height="28" rx="14" fill="#222228"/>
+<text x="630.0" y="299" class="s" font-size="13" fill="#E9E6E0" font-weight="600" text-anchor="middle" >GLB/FBX pipelines</text>
+</svg>

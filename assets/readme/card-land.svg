@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="236" viewBox="0 0 432 236" role="img" aria-label="ARTHIS.land — The Wall — A handcrafted Unity vertical city — real-time multiplayer, playable in the browser. 40+ rooms live on the wall.">
+<title>ARTHIS.land — The Wall — A handcrafted Unity vertical city — real-time multiplayer, playable in the browser. 40+ rooms live on the wall.</title>
+<style>
+.s{font-family:'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif}
+.m{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace}
+</style>
+
+<rect x="0.5" y="0.5" width="431" height="235" rx="16" fill="#16161A" stroke="#2A2A30"/>
+<circle cx="28" cy="34" r="4" fill="#E0262F"/>
+<text x="40" y="38" class="m" font-size="11" fill="#86837D" font-weight="500" text-anchor="start" letter-spacing="1.5">UNITY · WEBGL</text>
+<text x="408" y="38" class="m" font-size="11" fill="#86837D" font-weight="500" text-anchor="end" >03</text>
+<text x="24" y="74" class="s" font-size="22" fill="#F4F2EE" font-weight="800" text-anchor="start" >ARTHIS.land — The Wall</text>
+<text x="24" y="104" class="s" font-size="14" fill="#B4B0A9" font-weight="400" text-anchor="start" >A handcrafted Unity vertical city — real-time</text><text x="24" y="125" class="s" font-size="14" fill="#B4B0A9" font-weight="400" text-anchor="start" >multiplayer, playable in the browser. 40+ rooms live</text><text x="24" y="146" class="s" font-size="14" fill="#B4B0A9" font-weight="400" text-anchor="start" >on the wall.</text>
+<rect x="24" y="186" width="152" height="30" rx="8" fill="none" stroke="#3A3A40"/>
+<text x="100.0" y="206" class="s" font-size="13" fill="#F4F2EE" font-weight="700" text-anchor="middle" >Enter the wall  →</text>
+
+
+</svg>

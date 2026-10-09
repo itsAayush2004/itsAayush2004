@@ -1,0 +1,55 @@
+name: README live data
+
+# Pulls fresh numbers from GitHub (and YouTube, if configured), rebuilds the
+# README cards and the game's contribution file, and commits any changes.
+on:
+  schedule:
+    - cron: "41 */6 * * *" # every 6 hours
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - data/profile.json
+      - tools/**
+
+permissions:
+  contents: write
+
+concurrency:
+  group: readme-live
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch live data
+        env:
+          # PROFILE_TOKEN (a personal token with read:user) also counts private
+          # contributions; without it the built-in token sees public activity.
+          GITHUB_TOKEN: ${{ secrets.PROFILE_TOKEN || secrets.GITHUB_TOKEN }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+        run: python3 tools/fetch_live.py
+
+      - name: Rebuild README cards
+        run: python3 tools/build_readme_svgs.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/live.json breakout/contributions.json assets/readme
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Refresh live README data"
+            git push
+          fi

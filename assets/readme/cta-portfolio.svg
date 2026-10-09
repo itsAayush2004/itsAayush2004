@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="112" viewBox="0 0 880 112" role="img" aria-label="Walk through my 3D portfolio">
+<title>Walk through my 3D portfolio</title>
+<style>
+.s{font-family:'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif}
+.m{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace}
+</style>
+
+<rect width="880" height="112" rx="16" fill="#8C242F"/>
+<text x="30" y="36" class="m" font-size="11" fill="#F6D3D6" font-weight="500" text-anchor="start" letter-spacing="2.5">START HERE</text>
+<text x="30" y="68" class="s" font-size="26" fill="#FFFFFF" font-weight="800" text-anchor="start" >Walk through my 3D portfolio</text>
+<text x="30" y="92" class="s" font-size="14" fill="#F6D3D6" font-weight="400" text-anchor="start" >Nine themed rooms you scroll through — doors and all.</text>
+<g fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+<g><animateTransform attributeName="transform" type="translate" values="0 0;8 0;0 0" dur="1.4s" repeatCount="indefinite"/>
+<path d="M800 56h40"/><path d="M826 42l14 14-14 14"/></g>
+</g>
+
+</svg>
