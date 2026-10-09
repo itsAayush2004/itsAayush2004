@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="54" viewBox="0 0 880 54" role="img" aria-label="Contribution arcade">
+<title>Contribution arcade</title>
+<style>
+.s{font-family:'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif}
+.m{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace}
+</style>
+
+<text x="0" y="36" class="m" font-size="13" fill="#E0262F" font-weight="700" text-anchor="start" >01</text>
+<text x="34" y="37" class="s" font-size="26" fill="#8C8A85" font-weight="800" text-anchor="start" >Contribution arcade</text>
+<text x="880" y="36" class="m" font-size="12" fill="#8C8A85" font-weight="400" text-anchor="end" >every green square is a brick</text>
+<rect x="0" y="52" width="880" height="1" fill="#8C8A85" opacity=".35"/>
+
+</svg>

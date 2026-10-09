@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Commit Breakout — itsAayush2004</title>
+<meta name="description" content="Aayush's GitHub contribution graph as a Breakout game. Every green square is a brick." />
+<style>
+  :root {
+    --ink: #0e0e10; --card: #16161a; --line: #2a2a30; --text: #f4f2ee;
+    --muted: #a8a49d; --red: #e0262f; --green: #39d353;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    background: var(--ink); color: var(--text);
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: flex; justify-content: center; padding: 24px 16px;
+  }
+  main { width: 100%; max-width: 940px; display: flex; flex-direction: column; gap: 16px; }
+  header { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; justify-content: space-between; }
+  .kicker { font: 500 11px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; letter-spacing: .16em; color: var(--muted); text-transform: uppercase; }
+  h1 { margin: 2px 0 0; font-size: clamp(26px, 5vw, 36px); font-weight: 900; letter-spacing: -.03em; }
+  h1 span { color: var(--red); }
+  .hud { display: flex; gap: 8px; }
+  .stat { background: var(--card); border-radius: 10px; padding: 8px 14px; min-width: 84px; text-align: right; }
+  .stat b { display: block; font: 700 20px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  #score { color: var(--green); } #lives { color: var(--red); }
+  .board { position: relative; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #121215; }
+  canvas { display: block; width: 100%; height: auto; touch-action: none; cursor: none; }
+  .overlay {
+    position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; text-align: center; pointer-events: none; padding: 16px;
+  }
+  .overlay strong { font-size: clamp(24px, 4.5vw, 36px); font-weight: 900; letter-spacing: -.02em; }
+  .overlay span { font: 13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--muted); }
+  .overlay.hidden { display: none; }
+  footer { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; font: 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--muted); }
+  a { color: var(--green); }
+  .src { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <div class="kicker">itsAayush2004 · contribution arcade</div>
+      <h1>Commit Breakout<span>.</span></h1>
+    </div>
+    <div class="hud" aria-live="polite">
+      <div class="stat"><span class="kicker">Score</span><b id="score">0000</b></div>
+      <div class="stat"><span class="kicker">Bricks</span><b id="left">0</b></div>
+      <div class="stat"><span class="kicker">Lives</span><b id="lives">♥♥♥</b></div>
+    </div>
+  </header>
+
+  <div class="board">
+    <canvas id="game" width="900" height="520" aria-label="Breakout game made from a GitHub contribution graph"></canvas>
+    <div class="overlay" id="overlay">
+      <strong id="ov-title">Loading the year…</strong>
+      <span id="ov-sub">fetching contributions</span>
+    </div>
+  </div>
+
+  <footer>
+    <span>move: mouse, drag or ← → · launch / pause: click, tap or space</span>
+    <span class="src" id="source"></span>
+    <a href="https://github.com/itsAayush2004">← back to the profile</a>
+  </footer>
+</main>
+
+<script>
+(() => {
+  const USER = "itsAayush2004";
+  const W = 900, H = 520;
+  const COLS = 53, ROWS = 7;
+  const MX = 18, TOP = 54;
+  const PITCH = (W - MX * 2) / COLS;
+  const CELL = PITCH - 3;
+  const PW = 110, PH = 10, PY = H - 46;
+  const BALL = 9;
+  const PALETTE = ["#1c1f24", "#0e4429", "#006d32", "#26a641", "#39d353"];
+  const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  const cvs = document.getElementById("game");
+  const ctx = cvs.getContext("2d");
+  const $ = (id) => document.getElementById(id);
+
+  // crisp on high-DPI screens
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  cvs.width = W * dpr; cvs.height = H * dpr;
+  ctx.scale(dpr, dpr);
+
+  let bricks = [], monthLabels = [], particles = [];
+  let g = null;
+  let best = 0;
+  try { best = Number(localStorage.getItem("commit-breakout-best")) || 0; } catch (e) {}
+
+  function sampleYear() {
+    let seed = 7;
+    const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+    const out = [];
+    for (let w = 0; w < COLS; w++) {
+      const heat = w > 38 ? 0.62 : (w > 14 && w < 24 ? 0.4 : 0.22);
+      for (let d = 0; d < ROWS; d++) out.push(rnd() > 1 - heat ? Math.min(4, 1 + Math.floor(rnd() * 4)) : 0);
+    }
+    return { levels: out, labels: [] };
+  }
+
+  async function loadYear() {
+    try {
+      const res = await fetch(`https://github-contributions-api.jogruber.de/v4/${USER}?y=last`);
+      if (!res.ok) throw new Error(res.status);
+      const data = await res.json();
+      const days = (data.contributions || []).slice(-COLS * ROWS);
+      if (days.length < 7) throw new Error("empty");
+      // align so each column is a Sun..Sat week, like GitHub
+      const first = new Date(days[0].date + "T00:00:00");
+      const pad = first.getDay();
+      const levels = new Array(COLS * ROWS).fill(0);
+      const labels = [];
+      let lastMonth = -1;
+      days.forEach((d, i) => {
+        const idx = i + pad;
+        if (idx >= COLS * ROWS) return;
+        levels[idx] = Math.max(0, Math.min(4, d.level | 0));
+        const date = new Date(d.date + "T00:00:00");
+        const col = Math.floor(idx / ROWS);
+        if (date.getDate() <= 7 && date.getMonth() !== lastMonth && idx % ROWS === 0) {
+          labels.push({ col, text: MONTHS[date.getMonth()] });
+          lastMonth = date.getMonth();
+        }
+      });
+      if (!levels.some((l) => l > 0)) throw new Error("no activity");
+      $("source").textContent = `live graph · ${data.total ? Object.values(data.total)[0] + " contributions" : "last 12 months"}`;
+      return { levels, labels };
+    } catch (e) {
+      $("source").textContent = "sample graph (live data unavailable)";
+      return sampleYear();
+    }
+  }
+
+  function newGame() {
+    bricks = levelsTemplate.slice();
+    g = { score: 0, lives: 3, mode: "ready", padX: (W - PW) / 2, bx: 0, by: 0, vx: 0, vy: 0, speed: 340 };
+    particles = [];
+    stick();
+    updateHud();
+    showOverlay("Break the year.", "click, tap or press space to launch");
+  }
+
+  function stick() { g.bx = g.padX + PW / 2 - BALL / 2; g.by = PY - BALL - 2; }
+
+  function launch() {
+    if (!g) return;
+    if (g.mode === "over" || g.mode === "won") { newGame(); return; }
+    if (g.mode === "ready") {
+      const a = (Math.random() * 0.6 - 0.3);
+      g.vx = g.speed * Math.sin(a); g.vy = -g.speed * Math.cos(a);
+      g.mode = "play"; hideOverlay();
+    } else if (g.mode === "play") {
+      g.mode = "paused"; showOverlay("Paused", "click, tap or space to resume");
+    } else if (g.mode === "paused") {
+      g.mode = "play"; hideOverlay();
+    }
+  }
+
+  function showOverlay(title, sub) { $("ov-title").textContent = title; $("ov-sub").textContent = sub; $("overlay").classList.remove("hidden"); }
+  function hideOverlay() { $("overlay").classList.add("hidden"); }
+
+  function updateHud() {
+    $("score").textContent = String(g.score).padStart(4, "0");
+    $("left").textContent = bricks.filter((b) => b > 0).length;
+    $("lives").textContent = "♥".repeat(Math.max(0, g.lives)) || "—";
+  }
+
+  function burst(x, y, color) {
+    for (let i = 0; i < 8; i++) {
+      const a = Math.random() * Math.PI * 2, s = 40 + Math.random() * 120;
+      particles.push({ x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s, life: 0.5, color });
+    }
+  }
+
+  function step(dt) {
+    for (const p of particles) { p.x += p.vx * dt; p.y += p.vy * dt; p.vy += 300 * dt; p.life -= dt; }
+    particles = particles.filter((p) => p.life > 0);
+
+    if (keys.left) g.padX -= 620 * dt;
+    if (keys.right) g.padX += 620 * dt;
+    g.padX = Math.max(0, Math.min(W - PW, g.padX));
+
+    if (g.mode === "ready") { stick(); return; }
+    if (g.mode !== "play") return;
+
+    const n = 5;
+    for (let i = 0; i < n; i++) {
+      g.bx += g.vx * dt / n; g.by += g.vy * dt / n;
+      if (g.bx < 0) { g.bx = 0; g.vx = Math.abs(g.vx); }
+      if (g.bx > W - BALL) { g.bx = W - BALL; g.vx = -Math.abs(g.vx); }
+      if (g.by < 0) { g.by = 0; g.vy = Math.abs(g.vy); }
+
+      if (g.vy > 0 && g.by + BALL >= PY && g.by + BALL <= PY + PH + 6 && g.bx + BALL >= g.padX && g.bx <= g.padX + PW) {
+        const hit = (g.bx + BALL / 2 - (g.padX + PW / 2)) / (PW / 2);
+        const s = Math.min(620, Math.hypot(g.vx, g.vy));
+        const ang = Math.max(-1, Math.min(1, hit)) * 1.05;
+        g.vx = s * Math.sin(ang); g.vy = -s * Math.cos(ang);
+        g.by = PY - BALL;
+      }
+
+      const cx = g.bx + BALL / 2, cy = g.by + BALL / 2;
+      const col = Math.floor((cx - MX) / PITCH), row = Math.floor((cy - TOP) / PITCH);
+      if (col >= 0 && col < COLS && row >= 0 && row < ROWS) {
+        const idx = col * ROWS + row;
+        if (bricks[idx] > 0) {
+          const lx = cx - MX - col * PITCH, ly = cy - TOP - row * PITCH;
+          bricks[idx] -= 1;
+          g.score += 10;
+          burst(cx, cy, PALETTE[bricks[idx] + 1]);
+          if (Math.min(lx, PITCH - lx) < Math.min(ly, PITCH - ly)) g.vx = -g.vx; else g.vy = -g.vy;
+          g.vx *= 1.004; g.vy *= 1.004;
+          updateHud();
+          if (!bricks.some((b) => b > 0)) {
+            g.mode = "won"; saveBest();
+            showOverlay("Every commit cleared!", `score ${g.score} · best ${best} · click to replay the year`);
+            return;
+          }
+        }
+      }
+
+      if (g.by > H) {
+        g.lives -= 1; updateHud();
+        if (g.lives <= 0) {
+          g.mode = "over"; saveBest();
+          showOverlay(`Game over · ${g.score}`, `best ${best} · click or space to play again`);
+        } else {
+          g.mode = "ready"; stick();
+          showOverlay(`Ball lost — ${g.lives} left`, "click, tap or space to launch");
+        }
+        return;
+      }
+    }
+  }
+
+  function saveBest() {
+    best = Math.max(best, g.score);
+    try { localStorage.setItem("commit-breakout-best", String(best)); } catch (e) {}
+  }
+
+  function roundRect(x, y, w, h, r) {
+    ctx.beginPath(); ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath();
+  }
+
+  function draw() {
+    ctx.fillStyle = "#121215"; ctx.fillRect(0, 0, W, H);
+
+    ctx.fillStyle = "#6b6862";
+    ctx.font = "11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace";
+    for (const m of monthLabels) ctx.fillText(m.text, MX + m.col * PITCH, TOP - 12);
+
+    for (let c = 0; c < COLS; c++) {
+      for (let r = 0; r < ROWS; r++) {
+        ctx.fillStyle = PALETTE[bricks[c * ROWS + r] || 0];
+        roundRect(MX + c * PITCH, TOP + r * PITCH, CELL, CELL, 3); ctx.fill();
+      }
+    }
+
+    for (const p of particles) {
+      ctx.globalAlpha = Math.max(0, p.life * 2);
+      ctx.fillStyle = p.color; ctx.fillRect(p.x - 2, p.y - 2, 4, 4);
+    }
+    ctx.globalAlpha = 1;
+
+    ctx.fillStyle = "#39d353"; roundRect(g.padX, PY, PW, PH, 5); ctx.fill();
+    ctx.fillStyle = "#f4f2ee"; ctx.beginPath(); ctx.arc(g.bx + BALL / 2, g.by + BALL / 2, BALL / 2, 0, Math.PI * 2); ctx.fill();
+  }
+
+  // input
+  const keys = { left: false, right: false };
+  function pointer(e) {
+    const r = cvs.getBoundingClientRect();
+    g && (g.padX = Math.max(0, Math.min(W - PW, (e.clientX - r.left) / r.width * W - PW / 2)));
+  }
+  cvs.addEventListener("pointermove", pointer);
+  cvs.addEventListener("pointerdown", (e) => { pointer(e); launch(); });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft" || e.key === "a") keys.left = true;
+    else if (e.key === "ArrowRight" || e.key === "d") keys.right = true;
+    else if (e.key === " " || e.key === "Enter") { e.preventDefault(); launch(); }
+  });
+  window.addEventListener("keyup", (e) => {
+    if (e.key === "ArrowLeft" || e.key === "a") keys.left = false;
+    if (e.key === "ArrowRight" || e.key === "d") keys.right = false;
+  });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden && g && g.mode === "play") { g.mode = "paused"; showOverlay("Paused", "click, tap or space to resume"); }
+  });
+
+  let levelsTemplate = [];
+  let last = performance.now();
+  function frame(now) {
+    const dt = Math.min(0.033, (now - last) / 1000); last = now;
+    if (g) { step(dt); draw(); }
+    requestAnimationFrame(frame);
+  }
+
+  loadYear().then(({ levels, labels }) => {
+    levelsTemplate = levels;
+    monthLabels = labels;
+    newGame();
+    requestAnimationFrame(frame);
+  });
+})();
+</script>
+</body>
+</html>

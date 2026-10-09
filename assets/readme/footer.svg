@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="170" viewBox="0 0 880 170" role="img" aria-label="Handcrafted worlds, real-time and on the web — say hello">
+<title>Handcrafted worlds, real-time and on the web — say hello</title>
+<style>
+.s{font-family:'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif}
+.m{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace}
+</style>
+
+<rect width="880" height="170" rx="20" fill="#0E0E10"/>
+<text x="40" y="70" class="s" font-size="30" font-weight="800" fill="#F4F2EE">Handcrafted worlds,</text>
+<text x="40" y="106" class="s" font-size="30" font-weight="800" fill="#F4F2EE">real-time and on the web<tspan fill="#E0262F">.</tspan></text>
+<text x="40" y="136" class="m" font-size="12" fill="#86837D" font-weight="400" text-anchor="start" >open to collabs, game jams and interesting problems</text>
+<rect x="686" y="62" width="154" height="48" rx="12" fill="#F4F2EE"/>
+<g fill="none" stroke="#0E0E10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+<rect x="706" y="77" width="22" height="17" rx="2"/><path d="M706 80l11 7 11-7"/></g>
+<text x="740" y="92" class="s" font-size="16" fill="#0E0E10" font-weight="800" text-anchor="start" >Say hello</text>
+
+</svg>

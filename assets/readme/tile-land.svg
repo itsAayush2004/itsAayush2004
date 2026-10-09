@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="214" height="72" viewBox="0 0 214 72" role="img" aria-label="ARTHIS.land">
+<title>ARTHIS.land</title>
+<style>
+.s{font-family:'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif}
+.m{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace}
+</style>
+
+<rect x="0.5" y="0.5" width="213" height="71" rx="12" fill="#16161A" stroke="#2A2A30"/>
+<text x="16" y="29" class="m" font-size="10" fill="#E0262F" font-weight="700" text-anchor="start" letter-spacing="1.5">THE WALL</text>
+<text x="16" y="53" class="s" font-size="17" fill="#F4F2EE" font-weight="700" text-anchor="start" >ARTHIS.land</text>
+<path d="M186 30l8 8-8 8" fill="none" stroke="#86837D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+</svg>

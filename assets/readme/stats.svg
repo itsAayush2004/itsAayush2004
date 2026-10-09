@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="236" viewBox="0 0 880 236" role="img" aria-label="By the numbers">
+<title>By the numbers</title>
+<style>
+.s{font-family:'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif}
+.m{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace}
+</style>
+<rect width="880" height="236" rx="16" fill="#16161A"/>
+<path d="M293.3333333333333 18V218M586.6666666666666 18V218M18 118.0H862" stroke="#2A2A30"/>
+<text x="28.0" y="68.0" class="s" font-size="46" fill="#F4F2EE" font-weight="900" text-anchor="start" letter-spacing="-1">154</text>
+<text x="28.0" y="94.0" class="s" font-size="14" fill="#B4B0A9" font-weight="400" text-anchor="start" >interactive builds</text>
+<text x="321.3333333333333" y="68.0" class="s" font-size="46" fill="#F4F2EE" font-weight="900" text-anchor="start" letter-spacing="-1">141K</text>
+<text x="321.3333333333333" y="94.0" class="s" font-size="14" fill="#B4B0A9" font-weight="400" text-anchor="start" >lines of game code</text>
+<text x="614.6666666666666" y="68.0" class="s" font-size="46" fill="#F4F2EE" font-weight="900" text-anchor="start" letter-spacing="-1">43</text>
+<text x="614.6666666666666" y="94.0" class="s" font-size="14" fill="#B4B0A9" font-weight="400" text-anchor="start" >Three.js 3D builds</text>
+<text x="28.0" y="186.0" class="s" font-size="46" fill="#F4F2EE" font-weight="900" text-anchor="start" letter-spacing="-1">15</text>
+<text x="28.0" y="212.0" class="s" font-size="14" fill="#B4B0A9" font-weight="400" text-anchor="start" >P2P multiplayer games</text>
+<text x="321.3333333333333" y="186.0" class="s" font-size="46" fill="#F4F2EE" font-weight="900" text-anchor="start" letter-spacing="-1">28</text>
+<text x="321.3333333333333" y="212.0" class="s" font-size="14" fill="#B4B0A9" font-weight="400" text-anchor="start" >Blender add-ons</text>
+<text x="614.6666666666666" y="186.0" class="s" font-size="46" fill="#E0262F" font-weight="900" text-anchor="start" letter-spacing="-1">21.9K</text>
+<text x="614.6666666666666" y="212.0" class="s" font-size="14" fill="#B4B0A9" font-weight="400" text-anchor="start" >YouTube subscribers</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="300" viewBox="0 0 880 300" role="img" aria-label="Aayush — game developer and AI/backend engineer">
+<title>Aayush — game developer and AI/backend engineer</title>
+<style>
+.s{font-family:'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif}
+.m{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace}
+</style>
+
+<rect width="880" height="300" rx="20" fill="#0E0E10"/>
+<circle cx="800" cy="40" r="170" fill="none" stroke="#2A2A30"/>
+<circle cx="760" cy="110" r="80" fill="none" stroke="#2A2A30"/>
+<rect x="40" y="36" width="96" height="28" rx="6" fill="none" stroke="#3A3A40"/>
+<text x="52" y="55" class="m" font-size="12" fill="#E0262F" font-weight="700" text-anchor="start" >$</text><text x="64" y="55" class="m" font-size="12" fill="#CFCBC4" font-weight="400" text-anchor="start" > whoami</text>
+<circle cx="156" cy="50" r="4" fill="#39D353"><animate attributeName="opacity" values="1;.25;1" dur="1.8s" repeatCount="indefinite"/></circle>
+<text x="167" y="55" class="m" font-size="12" fill="#9FD8A8" font-weight="400" text-anchor="start" >shipping ARTHIS</text>
+<text x="34" y="176" class="s" font-size="104" font-weight="900" fill="#F4F2EE" letter-spacing="-4">Aayush<tspan fill="#E0262F">.</tspan></text>
+<text x="40" y="214" class="s" font-size="17" fill="#CFCBC4" font-weight="500" text-anchor="start" >Game developer &amp; AI/backend engineer · Jaipur, India</text>
+<rect x="40" y="236" width="90" height="28" rx="14" fill="#1E1E23"/><text x="85.0" y="254" class="m" font-size="12" fill="#E9E6E0" font-weight="500" text-anchor="middle" >Developer</text><rect x="138" y="236" width="98" height="28" rx="14" fill="#1E1E23"/><text x="187.0" y="254" class="m" font-size="12" fill="#E9E6E0" font-weight="500" text-anchor="middle" >AI Systems</text><rect x="244" y="236" width="98" height="28" rx="14" fill="#1E1E23"/><text x="293.0" y="254" class="m" font-size="12" fill="#E9E6E0" font-weight="500" text-anchor="middle" >3D Tooling</text><rect x="350" y="236" width="61" height="28" rx="14" fill="#1E1E23"/><text x="380.5" y="254" class="m" font-size="12" fill="#E9E6E0" font-weight="500" text-anchor="middle" >Games</text>
+<text x="840" y="52" class="m" font-size="11" fill="#86837D" font-weight="400" text-anchor="end" letter-spacing="3">BUILD</text>
+<text x="840" y="70" class="m" font-size="11" fill="#86837D" font-weight="400" text-anchor="end" letter-spacing="3">CREATE</text>
+<text x="840" y="88" class="m" font-size="11" fill="#86837D" font-weight="400" text-anchor="end" letter-spacing="3">EXPLORE</text>
+<g transform="translate(690 120)" fill="none" stroke-width="16" stroke-linecap="square">
+<path d="M45 15 L10 55 L45 95" stroke="#F4F2EE"/>
+<path d="M105 15 L140 55 L105 95" stroke="#F4F2EE"/>
+<path d="M88 8 L62 102" stroke="#E0262F"/>
+</g>
+<text x="840" y="266" class="m" font-size="11" fill="#86837D" font-weight="400" text-anchor="end" >NIT Jaipur · ECE</text>
+
+</svg>
