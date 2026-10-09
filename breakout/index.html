@@ -107,37 +107,53 @@
     return { levels: out, labels: [] };
   }
 
+  // days: [{date: "YYYY-MM-DD", level: 0..4}], oldest first
+  function buildYear(days) {
+    days = days.slice(-COLS * ROWS);
+    if (days.length < 7) throw new Error("empty");
+    // align so each column is a Sun..Sat week, like GitHub
+    const first = new Date(days[0].date + "T00:00:00");
+    const pad = first.getDay();
+    const levels = new Array(COLS * ROWS).fill(0);
+    const labels = [];
+    let lastMonth = -1;
+    days.forEach((d, i) => {
+      const idx = i + pad;
+      if (idx >= COLS * ROWS) return;
+      levels[idx] = Math.max(0, Math.min(4, d.level | 0));
+      const date = new Date(d.date + "T00:00:00");
+      if (idx % ROWS === 0 && date.getDate() <= 7 && date.getMonth() !== lastMonth) {
+        labels.push({ col: Math.floor(idx / ROWS), text: MONTHS[date.getMonth()] });
+        lastMonth = date.getMonth();
+      }
+    });
+    if (!levels.some((l) => l > 0)) throw new Error("no activity");
+    return { levels, labels };
+  }
+
   async function loadYear() {
+    // 1) this repo's own copy, refreshed daily from the GitHub API by readme-live.yml
+    try {
+      const res = await fetch("contributions.json", { cache: "no-cache" });
+      if (!res.ok) throw new Error(res.status);
+      const data = await res.json();
+      const year = buildYear(data.days || []);
+      $("source").textContent = `live from GitHub · ${Number(data.total).toLocaleString()} contributions · synced ${data.updated}`;
+      return year;
+    } catch (e) {}
+    // 2) public contributions API
     try {
       const res = await fetch(`https://github-contributions-api.jogruber.de/v4/${USER}?y=last`);
       if (!res.ok) throw new Error(res.status);
       const data = await res.json();
-      const days = (data.contributions || []).slice(-COLS * ROWS);
-      if (days.length < 7) throw new Error("empty");
-      // align so each column is a Sun..Sat week, like GitHub
-      const first = new Date(days[0].date + "T00:00:00");
-      const pad = first.getDay();
-      const levels = new Array(COLS * ROWS).fill(0);
-      const labels = [];
-      let lastMonth = -1;
-      days.forEach((d, i) => {
-        const idx = i + pad;
-        if (idx >= COLS * ROWS) return;
-        levels[idx] = Math.max(0, Math.min(4, d.level | 0));
-        const date = new Date(d.date + "T00:00:00");
-        const col = Math.floor(idx / ROWS);
-        if (date.getDate() <= 7 && date.getMonth() !== lastMonth && idx % ROWS === 0) {
-          labels.push({ col, text: MONTHS[date.getMonth()] });
-          lastMonth = date.getMonth();
-        }
-      });
-      if (!levels.some((l) => l > 0)) throw new Error("no activity");
-      $("source").textContent = `live graph · ${data.total ? Object.values(data.total)[0] + " contributions" : "last 12 months"}`;
-      return { levels, labels };
-    } catch (e) {
-      $("source").textContent = "sample graph (live data unavailable)";
-      return sampleYear();
-    }
+      const year = buildYear(data.contributions || []);
+      const total = data.total ? Object.values(data.total)[0] : null;
+      $("source").textContent = total != null ? `live graph · ${total.toLocaleString()} contributions` : "live graph · last 12 months";
+      return year;
+    } catch (e) {}
+    // 3) offline
+    $("source").textContent = "sample graph (live data unavailable)";
+    return sampleYear();
   }
 
   function newGame() {

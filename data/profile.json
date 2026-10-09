@@ -1,0 +1,19 @@
+{
+  "_note": "Hand-kept numbers with no public API behind them. Everything GitHub/YouTube can report comes from data/live.json, refreshed daily by .github/workflows/readme-live.yml.",
+  "github_user": "itsAayush2004",
+  "manual": {
+    "interactive_builds": "154",
+    "lines_of_game_code": "141K",
+    "threejs_builds": "43",
+    "p2p_games": "15",
+    "blender_addons": "28",
+    "youtube_subscribers": "21.9K"
+  },
+  "project_repos": {
+    "portfolio": "portfolio",
+    "space": "arthis.space",
+    "land": "arthis.land",
+    "relay": "arthisland-relay",
+    "atlas": "TravelAtlas"
+  }
+}

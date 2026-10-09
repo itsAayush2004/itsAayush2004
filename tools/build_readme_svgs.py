@@ -1,14 +1,35 @@
 """Generate the SVG cards used by the profile README.
 
-Edit the content below, then run:  python3 tools/build_readme_svgs.py
+Live numbers come from data/live.json (written by tools/fetch_live.py, run
+daily by .github/workflows/readme-live.yml); hand-kept numbers come from
+data/profile.json. Edit copy below, then run:  python3 tools/build_readme_svgs.py
 Output goes to assets/readme/. GitHub renders README images without web
 fonts, so every card uses system font stacks.
 """
+import json
+from datetime import datetime
 from pathlib import Path
 from textwrap import wrap
 from xml.sax.saxutils import escape
 
-OUT = Path(__file__).resolve().parent.parent / "assets" / "readme"
+ROOT = Path(__file__).resolve().parent.parent
+OUT = ROOT / "assets" / "readme"
+PROFILE = json.loads((ROOT / "data" / "profile.json").read_text(encoding="utf-8"))
+MANUAL = PROFILE["manual"]
+_live_path = ROOT / "data" / "live.json"
+LIVE = json.loads(_live_path.read_text(encoding="utf-8")) if _live_path.exists() else {}
+
+
+def compact(n):
+    """21934 -> 21.9K, 1204 -> 1,204"""
+    if n >= 10000:
+        v = n / 1000
+        return f"{v:.1f}K".replace(".0K", "K") if v < 1000 else f"{n/1e6:.1f}M"
+    return f"{n:,}"
+
+
+def short_date(iso):
+    return datetime.fromisoformat(iso.replace("Z", "+00:00")).strftime("%b %-d, %Y")
 
 INK = "#0E0E10"
 CARD = "#16161A"
@@ -69,6 +90,8 @@ def hero():
             + t(x + pw / 2, 254, r, "m", 12, "#E9E6E0", 500, "middle")
         )
         x += pw + 8
+    lp = LIVE.get("last_push")
+    status = f"last push · {lp['repo']} · {short_date(lp['at'])}" if lp else "shipping ARTHIS"
     body = f"""
 <rect width="{w}" height="{h}" rx="20" fill="{INK}"/>
 <circle cx="800" cy="40" r="170" fill="none" stroke="{LINE}"/>
@@ -76,7 +99,7 @@ def hero():
 <rect x="40" y="36" width="96" height="28" rx="6" fill="none" stroke="#3A3A40"/>
 {t(52, 55, "$", "m", 12, RED, 700)}{t(64, 55, " whoami", "m", 12, "#CFCBC4")}
 <circle cx="156" cy="50" r="4" fill="{GREEN}"><animate attributeName="opacity" values="1;.25;1" dur="1.8s" repeatCount="indefinite"/></circle>
-{t(167, 55, "shipping ARTHIS", "m", 12, "#9FD8A8")}
+{t(167, 55, status, "m", 12, "#9FD8A8")}
 <text x="34" y="176" class="s" font-size="104" font-weight="900" fill="{TEXT}" letter-spacing="-4">Aayush<tspan fill="{RED}">.</tspan></text>
 {t(40, 214, "Game developer & AI/backend engineer · Jaipur, India", "s", 17, "#CFCBC4", 500)}
 {''.join(pills)}
@@ -128,6 +151,8 @@ def strip():
         "Interactive 3D on the web with Three.js",
         "Unity + Python relays + WebGL",
     ]
+    if LIVE.get("contributions_year") is not None:
+        lines.insert(0, f"{LIVE['contributions_year']:,} contributions in the last 12 months")
     n = len(lines)
     dur = n * 3
     parts = []
@@ -167,9 +192,12 @@ def header(name, num, title, note):
 # ---------------------------------------------------------------- stats
 def stats():
     w, h = 880, 236
+    yt = LIVE.get("youtube_subscribers")
     items = [
-        ("154", "interactive builds"), ("141K", "lines of game code"), ("43", "Three.js 3D builds"),
-        ("15", "P2P multiplayer games"), ("28", "Blender add-ons"), ("21.9K", "YouTube subscribers"),
+        (MANUAL["interactive_builds"], "interactive builds"), (MANUAL["lines_of_game_code"], "lines of game code"),
+        (MANUAL["threejs_builds"], "Three.js 3D builds"), (MANUAL["p2p_games"], "P2P multiplayer games"),
+        (MANUAL["blender_addons"], "Blender add-ons"),
+        (compact(yt) if yt is not None else MANUAL["youtube_subscribers"], "YouTube subscribers"),
     ]
     cw, ch = w / 3, h / 2
     parts = [f'<rect width="{w}" height="{h}" rx="16" fill="{CARD}"/>']
@@ -183,34 +211,66 @@ def stats():
     write("stats.svg", svg(w, h, "\n".join(parts), "By the numbers"))
 
 
+def github_live():
+    w, h = 880, 150
+    parts = [f'<rect width="{w}" height="{h}" rx="16" fill="{CARD}"/>']
+    parts.append(f'<circle cx="32" cy="30" r="4" fill="{GREEN}"><animate attributeName="opacity" values="1;.25;1" dur="1.8s" repeatCount="indefinite"/></circle>')
+    if not LIVE:
+        parts.append(t(44, 35, "LIVE FROM GITHUB · waiting for the first daily sync", "m", 11, DIM, 500, "start", 'letter-spacing="1.5"'))
+        parts.append(t(28, 98, "Numbers appear after the readme-live workflow runs.", "s", 18, MUTED))
+        write("github-live.svg", svg(w, h, "\n".join(parts), "Live GitHub stats"))
+        return
+    parts.append(t(44, 35, "LIVE FROM GITHUB", "m", 11, DIM, 500, "start", 'letter-spacing="1.5"'))
+    parts.append(t(w - 28, 35, "updated " + short_date(LIVE["updated"]), "m", 11, DIM, 400, "end"))
+    items = [
+        (f"{LIVE['contributions_year']:,}", "contributions, last 12 mo"),
+        (f"{LIVE['current_streak']}d", f"current streak · best {LIVE['longest_streak']}d"),
+        (compact(LIVE["stars"]), "stars on my repos"),
+        (str(LIVE["public_repos"]), "public repositories"),
+    ]
+    cw = (w - 56) / 4
+    for i, (num, lab) in enumerate(items):
+        x = 28 + i * cw
+        if i:
+            parts.append(f'<rect x="{x - 14}" y="58" width="1" height="64" fill="{LINE}"/>')
+        parts.append(t(x, 98, num, "s", 36, GREEN if i == 0 else TEXT, 900, "start", 'letter-spacing="-1"'))
+        parts.append(t(x, 122, lab, "s", 13, MUTED))
+    label = ", ".join(f"{n} {l}" for n, l in items)
+    write("github-live.svg", svg(w, h, "\n".join(parts), f"Live from GitHub: {label}"))
+
+
 # ---------------------------------------------------------------- project cards
 PROJECTS = [
-    ("card-portfolio.svg", "01", "THREE.JS · SINGLE FILE", "Portfolio — the house",
+    ("portfolio", "card-portfolio.svg", "01", "THREE.JS · SINGLE FILE", "Portfolio — the house",
      "My CV as a scroll-driven 3D house. Nine themed rooms on a zig-zag plan; doors swing open as you approach and every room's work hangs on its walls.",
      "Walk through", RED),
-    ("card-space.svg", "02", "SUPABASE · 10K DAU", "ARTHIS.space",
+    ("space", "card-space.svg", "02", "SUPABASE · 10K DAU", "ARTHIS.space",
      "An endless, swipeable feed of single- and multiplayer mini-games — no installs. Backend scaled from 1 to 10,000 daily active users.",
      "Play now", RED),
-    ("card-land.svg", "03", "UNITY · WEBGL", "ARTHIS.land — The Wall",
+    ("land", "card-land.svg", "03", "UNITY · WEBGL", "ARTHIS.land — The Wall",
      "A handcrafted Unity vertical city — real-time multiplayer, playable in the browser. 40+ rooms live on the wall.",
      "Enter the wall", RED),
-    ("card-relay.svg", "04", "PYTHON STDLIB · 0 DEPS", "arthisland-relay",
+    ("relay", "card-relay.svg", "04", "PYTHON STDLIB · 0 DEPS", "arthisland-relay",
      "Real-time multiplayer relay — 2–4 players per room over TCP and WebSocket, written from scratch with zero dependencies. Containerised and cloud-ready.",
      "View source", TEXT),
-    ("card-hexabed.svg", "05", "UNITY · C# · 3,705 LINES", "HexaBed",
+    ("hexabed", "card-hexabed.svg", "05", "UNITY · C# · 3,705 LINES", "HexaBed",
      "Procedural hex-grid terrain engine — 160+ tiles into one world, a road generator that reads neighbouring heights, and a custom inspector so designers never open a script.",
      "14 scripts · 160+ tiles", DIM),
-    ("card-atlas.svg", "06", "THREE.JS · GITHUB PAGES", "Travel Atlas",
+    ("atlas", "card-atlas.svg", "06", "THREE.JS · GITHUB PAGES", "Travel Atlas",
      "A living 3D globe charting 30+ places I've been — and the ones I still dream of. Auto-deploys on every push.",
      "Spin the globe", BLUE),
 ]
 
 
-def card(name, num, kicker, title, desc, action, color):
+def card(key, name, num, kicker, title, desc, action, color):
     w, h = 432, 236
     lines = wrap(desc, 54)[:4]
     desc_svg = "".join(t(24, 104 + i * 21, ln, "s", 14, MUTED) for i, ln in enumerate(lines))
     aw = pill_w(action + "  →", 13)
+    meta = LIVE.get("projects", {}).get(key)
+    repo_meta = ""
+    if meta:
+        repo_meta = t(w - 24, h - 30, f"★ {meta['stars']}  ·  updated {short_date(meta['pushed'])}", "m", 11, DIM, 400, "end")
     body = f"""
 <rect x="0.5" y="0.5" width="{w-1}" height="{h-1}" rx="16" fill="{CARD}" stroke="{LINE}"/>
 <circle cx="28" cy="34" r="4" fill="{color}"/>
@@ -220,6 +280,7 @@ def card(name, num, kicker, title, desc, action, color):
 {desc_svg}
 <rect x="24" y="{h-50}" width="{aw}" height="30" rx="8" fill="none" stroke="#3A3A40"/>
 {t(24 + aw/2, h-30, action + "  →", "s", 13, TEXT, 700, "middle")}
+{repo_meta}
 """
     write(name, svg(w, h, body, f"{title} — {desc}"))
 
@@ -294,6 +355,7 @@ if __name__ == "__main__":
     header("h-projects.svg", "04", "Featured projects", "click a card")
     header("h-toolkit.svg", "05", "Toolkit", "what I build with")
     stats()
+    github_live()
     for p in PROJECTS:
         card(*p)
     toolkit()
