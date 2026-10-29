@@ -6,14 +6,14 @@
   "current_streak": 0,
   "longest_streak": 3,
   "last_push": {
-    "repo": "portfolio",
-    "at": "2026-10-29T22:56:55Z"
+    "repo": "itsAayush2004",
+    "at": "2026-10-29T23:43:09Z"
   },
   "projects": {
     "portfolio": {
       "repo": "portfolio",
       "stars": 27,
-      "pushed": "2026-10-29T22:56:55Z"
+      "pushed": "2026-10-29T23:04:02Z"
     },
     "space": {
       "repo": "arthis.space",
@@ -25,17 +25,12 @@
       "stars": 26,
       "pushed": "2026-08-30T13:27:14Z"
     },
-    "relay": {
-      "repo": "arthis-land-relay",
-      "stars": 26,
-      "pushed": "2026-07-17T17:40:01Z"
-    },
     "atlas": {
       "repo": "TravelDiary",
       "stars": 26,
-      "pushed": "2026-08-30T13:35:35Z"
+      "pushed": "2026-07-27T06:25:02Z"
     }
   },
   "youtube_subscribers": null,
-  "updated": "2026-10-29T22:57Z"
+  "updated": "2026-10-29T23:43Z"
 }
