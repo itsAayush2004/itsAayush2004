@@ -9,7 +9,7 @@
 
 <a href="https://arthis.space"><img src="assets/readme/tile-space.svg" alt="ARTHIS.space — mini games" width="24%" /></a>
 <a href="https://arthis.land"><img src="assets/readme/tile-land.svg" alt="ARTHIS.land — The Wall" width="24%" /></a>
-<a href="https://itsAayush2004.github.io"><img src="assets/readme/tile-atlas.svg" alt="Travel Atlas — live demo" width="24%" /></a>
+<a href="https://itsaayush2004.github.io/TravelDiary/"><img src="assets/readme/tile-atlas.svg" alt="Travel Atlas — live demo" width="24%" /></a>
 <a href="mailto:aayushkumarofficial21@gmail.com"><img src="assets/readme/tile-email.svg" alt="Email me" width="24%" /></a>
 
 <img src="assets/readme/strip.svg" alt="Multiplayer mini-games · real-time worlds · Three.js · Unity + WebGL" width="100%" />
@@ -75,16 +75,16 @@ a feed of multiplayer mini-games (**ARTHIS.space**) and a handcrafted Unity vert
 <a href="https://itsaayush2004.github.io/portfolio/"><img src="assets/readme/card-portfolio.svg" alt="Portfolio — the house" width="49%" /></a>
 <a href="https://arthis.space"><img src="assets/readme/card-space.svg" alt="ARTHIS.space" width="49%" /></a>
 <a href="https://arthis.land"><img src="assets/readme/card-land.svg" alt="ARTHIS.land — The Wall" width="49%" /></a>
-<a href="https://github.com/itsAayush2004/arthisland-relay"><img src="assets/readme/card-relay.svg" alt="arthisland-relay" width="49%" /></a>
+<a href="https://github.com/itsAayush2004/arthis-land-relay"><img src="assets/readme/card-relay.svg" alt="arthis-land-relay" width="49%" /></a>
 <img src="assets/readme/card-hexabed.svg" alt="HexaBed" width="49%" />
-<a href="https://itsAayush2004.github.io"><img src="assets/readme/card-atlas.svg" alt="Travel Atlas" width="49%" /></a>
+<a href="https://itsaayush2004.github.io/TravelDiary/"><img src="assets/readme/card-atlas.svg" alt="Travel Atlas" width="49%" /></a>
 
 <sub>Source:
 <a href="https://github.com/itsAayush2004/portfolio">portfolio</a> ·
 <a href="https://github.com/itsAayush2004/arthis.space">arthis.space</a> ·
 <a href="https://github.com/itsAayush2004/arthis.land">arthis.land</a> ·
-<a href="https://github.com/itsAayush2004/arthisland-relay">arthisland-relay</a> ·
-<a href="https://github.com/itsAayush2004/TravelAtlas">TravelAtlas</a></sub>
+<a href="https://github.com/itsAayush2004/arthis-land-relay">arthis-land-relay</a> ·
+<a href="https://github.com/itsAayush2004/TravelDiary">TravelDiary</a></sub>
 
 </div>
 

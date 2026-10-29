@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="432" height="236" viewBox="0 0 432 236" role="img" aria-label="arthisland-relay — Real-time multiplayer relay — 2–4 players per room over TCP and WebSocket, written from scratch with zero dependencies. Containerised and cloud-ready.">
-<title>arthisland-relay — Real-time multiplayer relay — 2–4 players per room over TCP and WebSocket, written from scratch with zero dependencies. Containerised and cloud-ready.</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="236" viewBox="0 0 432 236" role="img" aria-label="arthis-land-relay — Real-time multiplayer relay — 2–4 players per room over TCP and WebSocket, written from scratch with zero dependencies. Containerised and cloud-ready.">
+<title>arthis-land-relay — Real-time multiplayer relay — 2–4 players per room over TCP and WebSocket, written from scratch with zero dependencies. Containerised and cloud-ready.</title>
 <style>
 .s{font-family:'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif}
 .m{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace}
@@ -9,7 +9,7 @@
 <circle cx="28" cy="34" r="4" fill="#F4F2EE"/>
 <text x="40" y="38" class="m" font-size="11" fill="#86837D" font-weight="500" text-anchor="start" letter-spacing="1.5">PYTHON STDLIB · 0 DEPS</text>
 <text x="408" y="38" class="m" font-size="11" fill="#86837D" font-weight="500" text-anchor="end" >04</text>
-<text x="24" y="74" class="s" font-size="22" fill="#F4F2EE" font-weight="800" text-anchor="start" >arthisland-relay</text>
+<text x="24" y="74" class="s" font-size="22" fill="#F4F2EE" font-weight="800" text-anchor="start" >arthis-land-relay</text>
 <text x="24" y="104" class="s" font-size="14" fill="#B4B0A9" font-weight="400" text-anchor="start" >Real-time multiplayer relay — 2–4 players per room</text><text x="24" y="125" class="s" font-size="14" fill="#B4B0A9" font-weight="400" text-anchor="start" >over TCP and WebSocket, written from scratch with zero</text><text x="24" y="146" class="s" font-size="14" fill="#B4B0A9" font-weight="400" text-anchor="start" >dependencies. Containerised and cloud-ready.</text>
 <rect x="24" y="186" width="129" height="30" rx="8" fill="none" stroke="#3A3A40"/>
 <text x="88.5" y="206" class="s" font-size="13" fill="#F4F2EE" font-weight="700" text-anchor="middle" >View source  →</text>

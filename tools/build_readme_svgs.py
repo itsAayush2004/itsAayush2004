@@ -250,7 +250,7 @@ PROJECTS = [
     ("land", "card-land.svg", "03", "UNITY · WEBGL", "ARTHIS.land — The Wall",
      "A handcrafted Unity vertical city — real-time multiplayer, playable in the browser. 40+ rooms live on the wall.",
      "Enter the wall", RED),
-    ("relay", "card-relay.svg", "04", "PYTHON STDLIB · 0 DEPS", "arthisland-relay",
+    ("relay", "card-relay.svg", "04", "PYTHON STDLIB · 0 DEPS", "arthis-land-relay",
      "Real-time multiplayer relay — 2–4 players per room over TCP and WebSocket, written from scratch with zero dependencies. Containerised and cloud-ready.",
      "View source", TEXT),
     ("hexabed", "card-hexabed.svg", "05", "UNITY · C# · 3,705 LINES", "HexaBed",
