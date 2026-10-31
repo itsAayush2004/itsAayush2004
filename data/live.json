@@ -1,41 +1,41 @@
 {
   "followers": 24,
-  "public_repos": 22,
-  "stars": 515,
-  "contributions_year": 423,
+  "public_repos": 18,
+  "stars": 415,
+  "contributions_year": 422,
   "current_streak": 1,
   "longest_streak": 3,
   "last_push": {
-    "repo": "itsAayush2004",
-    "at": "2026-10-31T05:35:22Z"
+    "repo": "My-Cv",
+    "at": "2026-10-31T09:08:49Z"
   },
   "projects": {
     "portfolio": {
       "repo": "portfolio",
       "stars": 27,
-      "pushed": "2026-10-30T01:42:19Z"
+      "pushed": "2026-10-31T09:08:37Z"
     },
     "space": {
       "repo": "arthis.space",
       "stars": 26,
-      "pushed": "2026-08-30T13:15:31Z"
+      "pushed": "2026-10-31T09:08:35Z"
     },
     "land": {
       "repo": "arthis.land",
       "stars": 26,
-      "pushed": "2026-08-30T13:27:14Z"
+      "pushed": "2026-10-31T09:08:33Z"
     },
     "relay": {
       "repo": "arthis-land-relay",
       "stars": 26,
-      "pushed": "2026-10-30T01:42:28Z"
+      "pushed": "2026-10-31T09:08:12Z"
     },
     "atlas": {
       "repo": "TravelDiary",
       "stars": 26,
-      "pushed": "2026-10-30T01:42:24Z"
+      "pushed": "2026-10-31T09:08:46Z"
     }
   },
   "youtube_subscribers": null,
-  "updated": "2026-10-31T06:14Z"
+  "updated": "2026-10-31T13:01Z"
 }
