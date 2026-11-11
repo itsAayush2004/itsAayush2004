@@ -26,6 +26,8 @@
 
 <div align="center">
 
+<a href="https://raw.githack.com/itsAayush2004/itsAayush2004/main/breakout/index.html"><img src="assets/readme/contributions.svg" alt="My GitHub contribution graph for the last year" width="100%" /></a>
+
 <a href="https://raw.githack.com/itsAayush2004/itsAayush2004/main/breakout/index.html"><img src="assets/readme/play-breakout.svg" alt="Play Commit Breakout" width="300" /></a>
 
 <sub>My real contribution graph turned into Breakout. Every green square is a brick; darker greens take more hits.</sub>

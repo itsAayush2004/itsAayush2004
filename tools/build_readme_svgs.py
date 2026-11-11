@@ -7,7 +7,7 @@ Output goes to assets/readme/. GitHub renders README images without web
 fonts, so every card uses system font stacks.
 """
 import json
-from datetime import datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from textwrap import wrap
 from xml.sax.saxutils import escape
@@ -239,6 +239,58 @@ def github_live():
     write("github-live.svg", svg(w, h, "\n".join(parts), f"Live from GitHub: {label}"))
 
 
+LEVEL_COLORS = ["#222228", "#0E4429", "#006D32", "#26A641", GREEN]
+
+
+def contributions():
+    """The contribution calendar (from breakout/contributions.json) as a plain heatmap."""
+    w, h = 880, 214
+    cal_path = ROOT / "breakout" / "contributions.json"
+    cal = json.loads(cal_path.read_text(encoding="utf-8")) if cal_path.exists() else {}
+    days = cal.get("days") or []
+    parts = [f'<rect width="{w}" height="{h}" rx="16" fill="{CARD}"/>']
+    if not days:
+        parts.append(t(28, 104, "The contribution graph appears after the readme-live workflow runs.", "s", 16, MUTED))
+        write("contributions.svg", svg(w, h, "\n".join(parts), "Contribution graph"))
+        return
+
+    first = date.fromisoformat(days[0]["date"])
+    start = first - timedelta(days=(first.weekday() + 1) % 7)  # back to Sunday, like GitHub
+    x0, y0, cell, gap = 62, 72, 12, 3
+    pitch = cell + gap
+
+    total = cal.get("total")
+    title = f"{total:,} contributions in the last year" if total is not None else "Contributions in the last year"
+    parts.append(t(28, 34, title, "s", 15, TEXT, 700))
+    parts.append(t(w - 28, 34, "CONTRIBUTION GRAPH", "m", 11, DIM, 500, "end", 'letter-spacing="1.5"'))
+
+    for row, lab in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
+        parts.append(t(28, y0 + row * pitch + 10, lab, "m", 10, DIM))
+
+    last_month = None
+    for d in days:
+        day = date.fromisoformat(d["date"])
+        col = (day - start).days // 7
+        row = (day.weekday() + 1) % 7
+        x, y = x0 + col * pitch, y0 + row * pitch
+        if day.day <= 7 and row == 0 and day.month != last_month and col < 51:
+            parts.append(t(x, y0 - 8, day.strftime("%b"), "m", 10, DIM))
+            last_month = day.month
+        lvl = max(0, min(4, int(d.get("level", 0))))
+        parts.append(f'<rect x="{x}" y="{y}" width="{cell}" height="{cell}" rx="2.5" fill="{LEVEL_COLORS[lvl]}"/>')
+
+    ly = y0 + 7 * pitch + 14
+    lx = w - 28 - 5 * pitch - 34
+    parts.append(t(lx - 8, ly + 10, "Less", "m", 10, DIM, 400, "end"))
+    for i, c in enumerate(LEVEL_COLORS):
+        parts.append(f'<rect x="{lx + i * pitch}" y="{ly}" width="{cell}" height="{cell}" rx="2.5" fill="{c}"/>')
+    parts.append(t(lx + 5 * pitch + 4, ly + 10, "More", "m", 10, DIM))
+    if cal.get("updated"):
+        parts.append(t(28, ly + 10, "updated " + date.fromisoformat(cal["updated"]).strftime("%b %-d, %Y"), "m", 10, DIM))
+
+    write("contributions.svg", svg(w, h, "\n".join(parts), f"{title} — GitHub contribution graph"))
+
+
 # ---------------------------------------------------------------- project cards
 PROJECTS = [
     ("portfolio", "card-portfolio.svg", "01", "THREE.JS · SINGLE FILE", "Portfolio — the house",
@@ -356,6 +408,7 @@ if __name__ == "__main__":
     header("h-toolkit.svg", "05", "Toolkit", "what I build with")
     stats()
     github_live()
+    contributions()
     for p in PROJECTS:
         card(*p)
     toolkit()
