@@ -26,14 +26,6 @@
 
 <div align="center">
 
-<a href="https://raw.githack.com/itsAayush2004/itsAayush2004/main/breakout/index.html">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/itsAayush2004/itsAayush2004/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/itsAayush2004/itsAayush2004/output/github-snake.svg" />
-  <img alt="A snake eating my contribution graph" src="https://raw.githubusercontent.com/itsAayush2004/itsAayush2004/output/github-snake.svg" width="100%" />
-</picture>
-</a>
-
 <a href="https://raw.githack.com/itsAayush2004/itsAayush2004/main/breakout/index.html"><img src="assets/readme/play-breakout.svg" alt="Play Commit Breakout" width="300" /></a>
 
 <sub>My real contribution graph turned into Breakout. Every green square is a brick; darker greens take more hits.</sub>
