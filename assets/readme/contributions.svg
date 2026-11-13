@@ -390,6 +390,7 @@
 <rect x="842" y="102" width="12" height="12" rx="2.5" fill="#222228"/>
 <rect x="842" y="117" width="12" height="12" rx="2.5" fill="#0E4429"/>
 <rect x="842" y="132" width="12" height="12" rx="2.5" fill="#222228"/>
+<rect x="842" y="147" width="12" height="12" rx="2.5" fill="#222228"/>
 <text x="735" y="201" class="m" font-size="10" fill="#86837D" font-weight="400" text-anchor="end" >Less</text>
 <rect x="743" y="191" width="12" height="12" rx="2.5" fill="#222228"/>
 <rect x="758" y="191" width="12" height="12" rx="2.5" fill="#0E4429"/>
@@ -397,5 +398,5 @@
 <rect x="788" y="191" width="12" height="12" rx="2.5" fill="#26A641"/>
 <rect x="803" y="191" width="12" height="12" rx="2.5" fill="#39D353"/>
 <text x="822" y="201" class="m" font-size="10" fill="#86837D" font-weight="400" text-anchor="start" >More</text>
-<text x="28" y="201" class="m" font-size="10" fill="#86837D" font-weight="400" text-anchor="start" >updated Nov 12, 2026</text>
+<text x="28" y="201" class="m" font-size="10" fill="#86837D" font-weight="400" text-anchor="start" >updated Nov 13, 2026</text>
 </svg>
